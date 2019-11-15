@@ -6,6 +6,12 @@ public class Container {
  ArrayList<Cargo> list = new ArrayList<Cargo>();
 
  void addInContainer(Cargo cargo){
+     for(Cargo cargoAd : list){
+         if(cargoAd.getClass() != cargo.getClass()){
+             System.out.println("DENIED!");
+             return;
+         }
+     }
      list.add(cargo);
  }
 
@@ -32,9 +38,17 @@ public class Container {
  }
 
  void twoInOne(Container container){
+     for( Cargo cargo : list){
+         for (Cargo cargoSecond : container.list){
+             if (cargo.getClass() != cargoSecond.getClass()) {
+                 System.out.println("DENIED!");
+                 return;
+             }
+         }
+     }
      list.addAll(container.list);
-     container.list.clear();
  }
+// add int container \ sravnit two container / obidinenie ontainer
 
 
 }
