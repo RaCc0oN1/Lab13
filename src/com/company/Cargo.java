@@ -2,7 +2,7 @@ package com.company;
 
 public class Cargo {
 
-    int weight;
+int weight;
 
     public int getWeight() {
         return weight;
